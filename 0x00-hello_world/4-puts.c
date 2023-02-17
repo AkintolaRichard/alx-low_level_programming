@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char myMsg[] = "Programming is like building a multiligual puzzle";
+	char myMsg[] = "\"Programming is like building a multiligual puzzle";
 
 	puts(myMsg);
 
