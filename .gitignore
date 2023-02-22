@@ -1,0 +1,5 @@
+# Files that will not be pushed to the remote repo
+
+_putchar
+main.c
+
