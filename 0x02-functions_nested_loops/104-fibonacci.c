@@ -26,4 +26,5 @@ int main(void)
 		second = next;
 	}
 	printf("\n");
+	return (0);
 }
