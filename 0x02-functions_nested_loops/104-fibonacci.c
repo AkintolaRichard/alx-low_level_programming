@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#define LARGEST 10000000000
 /**
  * main - prints the first 98 Fibonacci numbers, starting with 1 and 2.
  *
@@ -7,23 +7,33 @@
  */
 int main(void)
 {
-	long int i, fr, second, next;
+	unsigned long int fr, second;
+	unsigned long int hold1, hold2, hold3;
+	unsigned long int fr1 = 0, fr2 = 0;
+	int i;
 
 	fr = 1;
 	second = 2;
-	printf("%lu, ", fr);
-	printf("%lu, ", second);
+	printf("%lu, %lu, ", fr, second);
 	for (i = 0; i < 96; i++)
 	{
-		next = fr + second;
-		if (i == 95)
+		if (fr + second > LARGEST || fr1 > 0 || fr > 0)
 		{
-			printf("%lu", next);
-			continue;
+			hold1 = (fr + second) / LARGEST;
+			hold2 = (fr + second) % LARGEST;
+			hold3 = fr1 + fr2 + hold1;
+			fr1 = fr2, fr2 = hold3;
+			fr = second, second = hold2;
+			printf("%lu%010lu", fr2, second);
 		}
-		printf("%lu, ", next);
-		fr = second;
-		second = next;
+		else
+		{
+			hold2 = fr + second;
+			fr = second, second = hold2;
+			printf("%lu", second);
+		}
+		if (i != 95)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);
