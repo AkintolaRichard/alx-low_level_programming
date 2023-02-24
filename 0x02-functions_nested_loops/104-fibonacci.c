@@ -17,7 +17,7 @@ int main(void)
 	printf("%lu, %lu, ", fr, second);
 	for (i = 0; i < 96; i++)
 	{
-		if (fr + second > LARGEST || fr1 > 0 || fr > 0)
+		if (fr + second > LARGEST || fr2 > 0 || fr1 > 0)
 		{
 			hold1 = (fr + second) / LARGEST;
 			hold2 = (fr + second) % LARGEST;
