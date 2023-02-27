@@ -7,13 +7,13 @@
  */
 void print_number(int n)
 {
-	int place = 10, remainder, num;
+	int place = 10, remainder, num, excess = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		if (n == INT_MIN)
-			num = INT_MAX + 1;
+			num = INT_MAX, excess++;
 		else
 			num = n * -1;
 	}
@@ -42,6 +42,6 @@ void print_number(int n)
 			remainder = remainder % place;
 			place = place / 10;
 		}
-		_putchar((remainder % 10) + '0');
+		_putchar(((remainder % 10) + excess) + '0');
 	}
 }
