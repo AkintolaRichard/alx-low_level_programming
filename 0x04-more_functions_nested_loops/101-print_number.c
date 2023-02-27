@@ -1,19 +1,21 @@
+#include <limits.h>
 #include "main.h"
-
 /**
  * print_number - prints an integer.
  * @n: the integer to be printed.
- *
  * Return: void.
  */
 void print_number(int n)
 {
-	int place, remainder, num;
+	int place = 10, remainder, num;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		num = n * -1;
+		if (n == INT_MIN)
+			num = INT_MAX;
+		else
+			num = n * -1;
 	}
 	else
 	{
@@ -23,13 +25,8 @@ void print_number(int n)
 	{
 		_putchar(num + '0');
 	}
-	else if (num < 10)
-	{
-		_putchar((num % 10) + '0');
-	}
 	else
 	{
-		place = 10;
 		while (num)
 		{
 			if (num / place < 10)
