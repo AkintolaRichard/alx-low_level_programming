@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_number - prints an integer.
@@ -32,6 +33,11 @@ void print_number(int n)
 		place = 10;
 		while (num)
 		{
+			if (num == INT_MAX)
+			{
+				place = 1000000000;
+				break;
+			}
 			place = place * 10;
 			if (num % place == num)
 			{
