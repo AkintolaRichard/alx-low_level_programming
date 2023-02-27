@@ -13,7 +13,7 @@ void print_number(int n)
 	{
 		_putchar('-');
 		if (n == INT_MIN)
-			num = INT_MAX;
+			num = INT_MAX + 1;
 		else
 			num = n * -1;
 	}
@@ -21,9 +21,9 @@ void print_number(int n)
 	{
 		num = n;
 	}
-	if (num == 0)
+	if (num == 0 || num < 10)
 	{
-		_putchar(num + '0');
+		_putchar((num % 10) + '0');
 	}
 	else
 	{
