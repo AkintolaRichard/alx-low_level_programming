@@ -12,10 +12,8 @@ void puts_half(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 		;
-	printf("After loop i = %d\n", i);
-	j = i / 2;
-	printf("j = %d\n", j);
+	j = (i % 2) == 0 ? i / 2 : (i / 2) + 1;
 	for (k = j; k < i; k++)
-		_putchar(str[k + 1]);
+		_putchar(str[k]);
 	_putchar('\n');
 }
