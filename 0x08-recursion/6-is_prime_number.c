@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 int prime_number(int, int);
 /**
@@ -9,7 +10,11 @@ int prime_number(int, int);
  */
 int is_prime_number(int n)
 {
-	return (prime_number(n, n - 1));
+	if (n < 2)
+		return (0);
+	if (n < 4)
+		return (1);
+	return (prime_number(n, 2));
 }
 
 /**
@@ -22,9 +27,10 @@ int is_prime_number(int n)
  */
 int prime_number(int num, int start)
 {
-	if (start == 0)
-		return (1);
 	if (num % start == 0)
 		return (0);
-	return (prime_number(num, start - 1));
+	if (num == start + 1)
+		return (1);
+	else
+		return (prime_number(num, start + 1));
 }
