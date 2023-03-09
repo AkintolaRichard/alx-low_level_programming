@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _strlen - returns the length of a string
@@ -7,24 +8,25 @@
  */
 int _strlen(char *s)
 {
-	if (s == '\0')
+	if (*s == '\0')
 		return (0);
 	return (1 + _strlen(s + 1));
 }
 
 /**
  * palindrome - checks if a string is palindrome
- * @s: array of char
+ * @s: array of character
+ * @a: array of character
  * @n: integer
- * Return: 1 if string is palindrom and 0 if otherwise
+ * Return: 1 if string is palindrome and 0 if otherwise
  */
-int palindrome(char *s, int n)
+int palindrome(char *a, char *s, int n)
 {
-	if (s == '\0')
+	if (*s == '\0')
 		return (1);
-	if (s != s[n])
+	if (*s != *(a + n))
 		return (0);
-	return (palindrome(s + 1, n - 1));
+	return (palindrome(a, s + 1, n - 1));
 }
 
 /**
@@ -36,8 +38,6 @@ int is_palindrome(char *s)
 {
 	int i;
 
-	if (s == '')
-		return (1);
-	i = _strlen(char *s);
-	return (palindrome(s, i - 1));
+	i = _strlen(s);
+	return (palindrome(s, s, i - 1));
 }
