@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * program_name - prints the program name
+ * main - prints the program name
  * @argc: integer
  * @argv: array of string
  *
- * Return: Nothing.
+ * Return: Always 0.
  */
-void program_name(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	printf("%s\n", argv[0]);
+	return (0);
 }
