@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #include <stdio.h>
-#inlcude <stdlib.h>
+#include <stdlib.h>
 
 int _putchar(char *c);
 
