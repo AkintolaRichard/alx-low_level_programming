@@ -13,7 +13,11 @@ char *create_array(unsigned int size, char c)
 	char *mptr;
 	unsigned int i;
 
+	if (size <= 0)
+		return (NULL);
 	mptr = malloc(sizeof(c) * size);
+	if (mptr == NULL)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
