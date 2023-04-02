@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		*op == '/' ||
 		*op == '*' ||
 		*op == '%'
-		))
+		) || strlen(op) != 1)
 	{
 		printf("Error\n");
 		return (99);
