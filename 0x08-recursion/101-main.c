@@ -10,6 +10,8 @@ int main(void)
 {
     int r;
 
+    r = wildcmp("holberton.c", "*");
+    printf("%d\n", r);
     r = wildcmp("main.c", "ma********************************d");
     printf("%d\n", r);
     r = wildcmp("main.c", "*.c");
