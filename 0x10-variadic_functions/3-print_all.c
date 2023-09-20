@@ -12,9 +12,10 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0;
 	char *thestr;
 	char *sep = "";
+	
 	va_start(list, format);
 
-	if (format)
+	if (format[i])
 	{
 		while (format[i])
 		{
