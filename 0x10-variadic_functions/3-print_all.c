@@ -11,37 +11,38 @@ void print_all(const char * const format, ...)
 	va_list list;
 	unsigned int i = 0;
 	char *thestr;
-
+	char *sep = "";
 	va_start(list, format);
 
-	while (format[i])
+	if (format)
 	{
-		switch(format[i])
+		while (format[i])
 		{
-			case 'c':
-				printf("%c", va_arg(list, int));
-				break;
-			case 'i':
-				printf("%i", va_arg(list, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(list, double));
-				break;
-			case 's':
-				thestr = va_arg(list, char *);
-				if (!thestr)
-					thestr = "(nil)";
-				printf("%s", thestr);
-				break;
-			default:
-				i++;
-				continue;
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", sep, va_arg(list, int));
+					break;
+				case 'i':
+					printf("%s%i", sep, va_arg(list, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(list, double));
+					break;
+				case 's':
+					thestr = va_arg(list, char *);
+					if (!thestr)
+						thestr = "(nil)";
+					printf("%s%s", sep, thestr);
+					break;
+				default:
+					i++;
+					continue;
+			}
+			sep = ", ";
+			i++;
 		}
-		if (format[i + 1])
-			printf(", ");
-		i++;
+		printf("\n");
+		va_end(list);
 	}
-
-	printf("\n");
-	va_end(list);
 }
