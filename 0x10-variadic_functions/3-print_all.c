@@ -8,15 +8,15 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list list;
-	unsigned int i = 0;
-	char *thestr;
-	char *sep = "";
-	
-	va_start(list, format);
-
-	if (format[i])
+	if (format != NULL)
 	{
+		va_list list;
+		unsigned int i = 0;
+		char *thestr;
+		char *sep = "";
+
+		va_start(list, format);
+
 		while (format[i])
 		{
 			switch (format[i])
