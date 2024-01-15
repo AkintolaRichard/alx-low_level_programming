@@ -2,6 +2,7 @@
 
 /**
  * free_grid - frees a 2 dimensional grid
+ * @grid: the 2 dimensional array of int
  * @height: the height of the grid
  *
  * Return: Nothing
