@@ -12,7 +12,7 @@ size_t list_len(const list_t *h)
 	size_t i = 0;
 
 	current = h;
-	while(current != NULL)
+	while (current != NULL)
 	{
 		i++;
 		current = (*current).next;
