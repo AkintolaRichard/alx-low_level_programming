@@ -9,6 +9,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd, flwrite, flclose;
+	ssize_t len = 0;
 
 	if (filename == NULL)
 		return (-1);
@@ -16,5 +17,12 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 		return (1);
-	
+	while(text_content[len++] != '\0');
+	flwrite = write(fd, text_content, len);
+	if (flwrite < 0)
+		return (-1);
+	flclose = close(fd);
+	if (flclose < 0)
+		return (-1);
+	return (1);
 }
